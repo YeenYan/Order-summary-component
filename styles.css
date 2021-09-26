@@ -1,14 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
 
 :root {
-    --pale-blue: hsl(225, 100%, 94%);
-    --very-pale-blue: hsl(225, 100%, 98%);
-    --bright-blue: hsl(245, 75%, 52%);
-    --desaturated-blue: hsl(224, 23%, 55%);
-    --dark-blue: hsl(223, 47%, 23%);
-}
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
 
+    /*for paragraph*/
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+
+    /*for background, headings, buttons*/
+    --very-light-gray: hsl(0, 0%, 95%);
+}
 
 *,
 *::before,
@@ -16,179 +18,123 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
-    /* outline: 1px solid red; */
 }
 
-body {
-    font-family: 'Red Hat Display', sans-serif;
+body{
     font-size: 16px;
-    background-color: var(--pale-blue);
     line-height: 1.6;
+    background-color: var(--very-light-gray);
 }
 
-img {
-    max-width: 100%;
+/*============ Typography Starts Here ===============*/
+
+.col__header {
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--very-light-gray);
 }
 
-/*============= typography Starts Here =================*/
-
-h1,h3,p{
-    color: var(--dark-blue);
+.col__text,
+.col__cta {
+    font-family: 'Lexend Deca', sans-serif;
 }
 
-.content__header {
-    font-size: 1.3rem;
-    font-weight: 900;
+.col__text {
+    font-size: .94rem;
+    color: var(--transparent-white);
 }
 
-.annual--plan-title {
-    font-size: 1rem;
+.sedan__cta {
+    color: var(--bright-orange);
 }
 
-.annual--plan-title {
-    font-weight: 900;
+.suv__cta {
+    color: var(--dark-cyan);
 }
 
-.annual--plan-price {
-    color: var(--desaturated-blue);
+.luxury__cta {
+    color: var(--very-dark-cyan);
 }
 
-.annual--plan-link{
-    font-size: .8rem;
-    font-weight: 900;
-}
-
-.btn__proceed,
-.btn__cancel {
-    font-size: .8rem;
-    font-weight: 900;
-}
-
-/*============= typography Ends Here =================*/
+/*============ Typography Ends Here ===============*/
 
 .main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100vh;
+
+    min-height: 100vh;
 }
 
-.main--bg {
-    /* z-index: -1;
-    position: absolute;
-    top: 0;
-    background-position: center;
-    background-size: cover;
-    width: 100%; */
-    display: none;
-}
+.card {
+    display: flex;
+    flex-wrap: wrap;
 
-.container {
-    background-color: #fff;
-    margin: 1em;
-    max-width: 400px;
-    border-radius: 20px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 3rem auto;
+    border-radius: 10px;
     overflow: hidden;
 }
 
-.content__img {
-    position: relative;
-    background-size: cover;
-    background-position: center;
+.col {
+    padding: 1rem 3rem;
 }
 
-.row {
-    text-align: center;
-    width: 90%;
-    margin: 0 auto;
+.col__img,
+.col__text{
+    margin: 1.5rem 0;
 }
 
-.content__annual--plan,
-.content__header,
-.content__text {
-    width: 95%;
-    margin: 0 auto;
+.col__cta {
+    display: inline-block;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
-
-.content__header {
-    margin: 1rem 0;
+.sedan__row {
+    background-color: var(--bright-orange);
 }
 
-
-.content__annual--plan {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    background-color: var(--very-pale-blue);
-    border-radius:10px;
-    padding: 1em;
-    margin: 1.5rem auto;
+.suv__row {
+    background-color: var(--dark-cyan);
 }
 
-.annual--plan-text {
-    width: 100%;
-    margin: 0 2rem 0 1rem;
+.luxury__row {
+    background-color: var(--very-dark-cyan);
 }
 
-.annual--plan-link {
-    color: var(--bright-blue);
-}
-
-button {
-    display: block;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    padding: .8rem 0;
-    width: 100%;
-}
-
-.btn__proceed {
-    color: #fff;
-    background-color: var(--bright-blue);
-    filter: drop-shadow(0 10px 8px hsla(245, 75%, 52%, .3));
-    margin-bottom: .5rem;
-    cursor: pointer;
-}
-
-.btn__cancel {
-    color: var(--desaturated-blue);
-    background-color: #fff;
-    margin-bottom: 1rem;
-} 
-
-.annual--plan-link:hover,
-.annual--plan-link:focus {
+.col__cta {
     text-decoration: none;
-    opacity: .7;
+    background-color: var(--very-light-gray);
+    padding: .5rem 1.5em;
+    border-radius: 50px;
+    border: .1px solid var(--very-light-gray);
 }
 
-.btn__proceed:hover,
-.btn__proceed:focus {
-   opacity: .7;
+.col__cta:active,
+.col__cta:hover {
+    color: var(--very-light-gray);
+    background: none;
+    border: .1px solid var(--very-light-gray);
+    border-radius: 50px;
 }
 
-.btn__cancel:hover,
-.btn__cancel:focus {
-   color: var(--dark-blue);
-}
 
+@media (min-width: 800px) {
 
-@media (min-width: 1440px) {
+    .card {
+        display: flex;
+    }
 
-    
-    .main--bg {
-        z-index: -1;
-        position: absolute;
-        display: inline;
-        top: 0;
-        background-position: center;
-        background-size: cover;
-        width: 100%;
+    .col {
+        flex: 1;
+        flex-basis: 30%;
+    }
+
+    .col__text {
+        min-height: 150px;
     }
 
 }
